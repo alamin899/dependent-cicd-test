@@ -18,6 +18,12 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run build
+
+    steps:
+    - name: The job has failed
+      if: ${{ failure() }}
+    - name: "Failed Job"
+      run: echo "Job failed"
   
   deploy:
     needs: build

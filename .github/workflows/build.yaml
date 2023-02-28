@@ -27,7 +27,7 @@ jobs:
         job_name: '*Test*'
         channel: '#self'
         url: ${{ secrets.SLACK_WEBHOOK }}
-     run: echo "///"
+      run: echo "///"
 
 
     # - uses: rtCamp/action-slack-notify@v2

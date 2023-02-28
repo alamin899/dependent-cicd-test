@@ -24,7 +24,7 @@ jobs:
     - name: Slack notification
       env:
         SLACK_CHANNEL: general
-        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_COLOR: ${{ job.status }}
         SLACK_ICON: https://github.com/rtCamp.png?size=48
         SLACK_MESSAGE: 'Your build failed'
         SLACK_TITLE: Post Title

@@ -24,7 +24,7 @@ jobs:
     name: Dev deployment process
     runs-on: ubuntu-latest
     steps:
-      - name: Every time
+      - name: Echo
         run: echo "This step will always run"
 # jobs:
 #   build:

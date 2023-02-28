@@ -22,13 +22,12 @@ jobs:
       run: echo "This build failed"
     - uses: lazy-actions/slatify@master
     - name: Notification
-      run: echo "ggg"
       with:
         type: ${{ job.status }}
         job_name: '*Test*'
         channel: '#self'
         url: ${{ secrets.SLACK_WEBHOOK }}
-
+     run: echo "///"
 
 
     # - uses: rtCamp/action-slack-notify@v2

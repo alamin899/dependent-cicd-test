@@ -19,7 +19,6 @@ jobs:
     - run: npm run build
   
   filedNotification:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: The job has failed

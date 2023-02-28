@@ -21,12 +21,6 @@ jobs:
       if: ${{ failure() }}
       run: echo "This step will always run"
   
-  filedNotification:
-    runs-on: ubuntu-latest
-    steps:
-      - name: The job has failed
-        if: ${{ failure() }}
-        run: echo "This step will always run"
 
   deploy:
     needs: build

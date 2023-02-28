@@ -17,11 +17,9 @@ jobs:
         node-version: "16.x"
     - run: npm i
     - run: npm run build
-
       if: ${{ failure() }}
     - name: This build has failed
       run: echo "This build failed"
-
     - uses: rtCamp/action-slack-notify@v2
     - name: Slack notification
       env:

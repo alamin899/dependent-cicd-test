@@ -19,16 +19,25 @@ jobs:
     - run: npm run build
       if: ${{ failure() }}
     - name: This build has failed
-      run: echo "This build failed"
-    - uses: rtCamp/action-slack-notify@v2
-    - name: Slack notification
-      env:
-        SLACK_CHANNEL: general
-        SLACK_COLOR: ${{ job.status }}
-        SLACK_ICON: https://github.com/rtCamp.png?size=48
-        SLACK_MESSAGE: 'Your build faileds '
-        SLACK_TITLE: Post Title
-        SLACK_WEBHOOK: https://hooks.slack.com/services/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
+      run: echo "This build failed"- name: Slack Notification
+    - uses: lazy-actions/slatify@master
+    - name: Notification
+      with:
+        type: ${{ job.status }}
+        job_name: '*Test*'
+        channel: '#self'
+        url: ${{ secrets.SLACK_WEBHOOK }}
+
+
+    # - uses: rtCamp/action-slack-notify@v2
+    # - name: Slack notification
+    #   env:
+    #     SLACK_CHANNEL: general
+    #     SLACK_COLOR: ${{ job.status }}
+    #     SLACK_ICON: https://github.com/rtCamp.png?size=48
+    #     SLACK_MESSAGE: 'Your build faileds '
+    #     SLACK_TITLE: Post Title
+    #     SLACK_WEBHOOK: https://hooks.slack.com/services/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
       run: echo "run notification"
   
 

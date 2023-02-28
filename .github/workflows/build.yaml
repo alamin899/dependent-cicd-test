@@ -29,6 +29,7 @@ jobs:
         SLACK_MESSAGE: 'Your build failed'
         SLACK_TITLE: Post Title
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      run: echo "run notification"
   
 
   deploy:

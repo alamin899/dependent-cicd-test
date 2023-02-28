@@ -19,7 +19,7 @@ jobs:
     - run: npm run build
       if: ${{ failure() }}
     - name: This build has failed
-      run: echo "This build failed"- name: Slack Notification
+      run: echo "This build failed"
     - uses: lazy-actions/slatify@master
     - name: Notification
       with:

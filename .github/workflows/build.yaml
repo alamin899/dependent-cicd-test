@@ -18,6 +18,12 @@ jobs:
     - run: npm i
     - run: npm run build
   
+  filedNotification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: The job has failed
+        if: ${{ failure() }}
+
   deploy:
     needs: build
     name: Dev deployment process

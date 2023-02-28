@@ -17,6 +17,9 @@ jobs:
         node-version: "16.x"
     - run: npm i
     - run: npm run build
+    - name: The job has failed
+        if: failure() && steps.test-app.outcome != 'success'
+        run: echo "This step will always run"
   
   filedNotification:
     runs-on: ubuntu-latest

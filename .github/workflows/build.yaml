@@ -28,7 +28,7 @@ jobs:
         SLACK_ICON: https://github.com/rtCamp.png?size=48
         SLACK_MESSAGE: 'Your build failed'
         SLACK_TITLE: Post Title
-        SLACK_WEBHOOK: ${{ github.secrets.SLACK_WEBHOOK }}
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       run: echo "run notification"
   
 

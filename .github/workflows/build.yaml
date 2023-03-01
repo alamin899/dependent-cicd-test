@@ -17,7 +17,7 @@ jobs:
       - run: npm i
       - run: npm run build
         if: ${{ failure() }}
-      - name: This build has failed
+        - name: This build has failed
 
         # uses: lazy-actions/slatify@master
         # with:

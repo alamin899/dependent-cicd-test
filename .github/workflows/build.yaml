@@ -16,13 +16,13 @@ jobs:
         with:
           node-version: 16.14.2
       - run: npm i -g npm@8.5.0
+      - run: node -v
       - run: npm -v
       - run: npm run build
+
       - name: The job has failed
         if: ${{ failure() }}
         run: echo "Failed"
-
-      # - name: "second step running"
 
   deploy:
     needs: build

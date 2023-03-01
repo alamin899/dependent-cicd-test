@@ -20,6 +20,7 @@ jobs:
       - run: echo "This build has failed"
 
         uses: lazy-actions/slatify@master
+        - run: echo "hello"
         with:
           type: ${{ job.status }}
           job_name: "*Test*"

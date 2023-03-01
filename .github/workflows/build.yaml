@@ -27,7 +27,8 @@ jobs:
         job_name: '*Test*'
         channel: '#self'
         url: ${{ secrets.SLACK_WEBHOOK }}
-      run: echo "hello"
+
+    - run: echo "hello"
 
   deploy:
     needs: build

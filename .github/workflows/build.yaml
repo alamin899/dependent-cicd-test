@@ -11,21 +11,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16.x
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
-          node-version: "16.4.2"
-        script: |
-          npm i
-          npm run build
+          node-version: "16.x"
+      - run: npm i
+      - run: npm run build
         if: ${{ failure() }}
       - name: This build has failed
 
-        # uses: lazy-actions/slatify@master
-        # with:
-        #   type: ${{ job.status }}
-        #   job_name: "*Test*"
-        #   channel: "#self"
-        #   url: ${{ secrets.SLACK_WEBHOOK }}
+        uses: lazy-actions/slatify@master
+      - name: Notification
+        with:
+          type: ${{ job.status }}
+          job_name: "*Test*"
+          channel: "#self"
+          url: ${{ secrets.SLACK_WEBHOOK }}
+
+      - run: echo "hello"
 
   deploy:
     needs: build

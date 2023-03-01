@@ -20,8 +20,9 @@ jobs:
       - run: npm -v
       - run: npm install
       - run: npm run build
+
+      - name: Build status
         if: ${{ failure() }}
-      - name: The job has failed
         run: echo "Failed"
 
   deploy:

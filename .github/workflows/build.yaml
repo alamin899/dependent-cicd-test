@@ -14,12 +14,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.4.2"
-      - name: Running npm
       - run: npm i
-
       - name: Running project build
       - run: npm run build
-
         if: ${{ failure() }}
       - name: This build has failed
       - run: echo "Build failed"

@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: Building
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,7 +24,7 @@ jobs:
 
       - name: Build status
         if: ${{ failure() }}
-        run: echo "Failed"
+        run: "Failed"
 
   deploy:
     needs: build

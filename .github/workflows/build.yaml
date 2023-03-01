@@ -14,11 +14,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
-      - run: npm i
+      - run: npm i npm@8.5.0
       - run: npm run build
       - name: The job has failed
         if: ${{ failure() }}
-        run: echo "This step will always run"
+        run: echo "Failed"
 
   deploy:
     needs: build

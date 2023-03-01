@@ -17,7 +17,7 @@ jobs:
       - run: npm i
       - run: npm run build
         if: ${{ failure() }}
-      - run: echo "This build has failed"
+        run: echo "This build has failed"
 
   deploy:
     needs: build

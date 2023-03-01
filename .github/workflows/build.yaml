@@ -16,8 +16,9 @@ jobs:
           node-version: 16.x
       - run: npm i
       - run: npm run build
+      - name: The job has failed
         if: ${{ failure() }}
-      - run: echo "This build has failed"
+        run: echo "This step will always run"
 
   deploy:
     needs: build

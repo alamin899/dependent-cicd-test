@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 16.14.2
       - run: npm i npm@8.5.0
-      - run: echo npm -v
+      - run: npm -v
       - run: npm run build
       - name: The job has failed
         if: ${{ failure() }}

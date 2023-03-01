@@ -19,9 +19,6 @@ jobs:
         if: ${{ failure() }}
       - name: This build has failed
 
-        uses: lazy-actions/slatify@master
-      - name: Notification
-
   deploy:
     needs: build
     name: Dev deployment process

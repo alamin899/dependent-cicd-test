@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: "16.4.2"
         script: |
           npm i
           npm run build
         if: ${{ failure() }}
-        - name: This build has failed
+      - name: This build has failed
 
         # uses: lazy-actions/slatify@master
         # with:

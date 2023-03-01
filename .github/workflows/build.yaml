@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.14.2"
-      - run: npm install npm@8.50
+      - run: npm i -g npm@8.50
       - run: npm run build
         if: ${{ failure() }}
       - run: echo "This build has failed"

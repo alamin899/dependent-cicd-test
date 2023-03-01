@@ -18,9 +18,7 @@ jobs:
       - run: npm run build
         if: ${{ failure() }}
       - name: This build has failed
-
         uses: lazy-actions/slatify@master
-        name: Notification
         with:
           type: ${{ job.status }}
           job_name: "*Test*"

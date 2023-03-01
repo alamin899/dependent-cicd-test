@@ -20,7 +20,7 @@ jobs:
       if: ${{ failure() }}
     - name: This build has failed
 
-    - uses: lazy-actions/slatify@master
+      uses: lazy-actions/slatify@master
     - name: Notification
       with:
         type: ${{ job.status }}

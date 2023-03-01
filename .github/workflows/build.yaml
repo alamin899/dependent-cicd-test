@@ -19,6 +19,14 @@ jobs:
         if: ${{ failure() }}
       - run: echo "This build has failed"
 
+        uses: lazy-actions/slatify@master
+        with:
+          type: ${{ job.status }}
+          job_name: "*Test*"
+          channel: "#self"
+          url: ${{ secrets.SLACK_WEBHOOK }}
+      - run: echo "hello"
+
   deploy:
     needs: build
     name: Dev deployment process

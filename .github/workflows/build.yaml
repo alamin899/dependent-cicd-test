@@ -31,9 +31,9 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_COLOR: ${{ job.status }}
-          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_ICON: https://amarpet.com/favicon.png
           SLACK_MESSAGE: "Build failed on test build"
-          SLACK_TITLE: Application build test @Md. Al-Amin
+          SLACK_TITLE: Application build test
           SLACK_USERNAME: Customer Panel(dev server)
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 

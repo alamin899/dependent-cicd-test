@@ -27,7 +27,7 @@ jobs:
         run: "Failed"
 
       - name: Slack Notification
-        if: ${{ success() }}
+        if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

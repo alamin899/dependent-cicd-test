@@ -33,7 +33,7 @@ jobs:
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://github.com/rtCamp.png?size=48
           SLACK_MESSAGE: "Build failed on test build"
-          SLACK_TITLE: Application build test
+          SLACK_TITLE: Application build test @Md. Al-Amin
           SLACK_USERNAME: Customer Panel(dev server)
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 

@@ -40,7 +40,6 @@ jobs:
       - name: Dev deployment process
         if: ${{ success() }}
         run: echo "This step will always run"
-        
-        if: ${{failure()}}
-        name: this is failed
-        run: this is failed run
+        - name: this is failed
+          if: ${{failure()}}
+          run: this is failed run

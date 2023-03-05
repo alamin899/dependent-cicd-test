@@ -39,5 +39,5 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
       - name: Dev deployment process
-        if: ${{ steps.nodestep.outcome.success }}
+        if: ${{ steps.nodestep.outcome.failture }}
         run: echo "Success step 2 is running"

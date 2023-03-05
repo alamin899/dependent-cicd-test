@@ -10,6 +10,7 @@ jobs:
     name: Building
     runs-on: ubuntu-latest
     steps:
+      - id: step1
       - uses: actions/checkout@v3
 
       - name: Use Node.js 16.14.2
@@ -37,9 +38,7 @@ jobs:
           SLACK_USERNAME: Customer Panel(dev server)
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
+    steps:
       - name: Dev deployment process
-        if: ${{ success() }}
-        run: echo "This step will always run"
-      - name: this is failed
-        if: ${{failure()}}
-        run: this is failed run
+        if: ${{ steps.step1.outcome.success }}
+        run: echo "Success step 2 is running"

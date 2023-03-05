@@ -37,20 +37,6 @@ jobs:
           SLACK_USERNAME: Customer Panel(dev server)
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
-  # slackNotification:
-  #   name: Slack Notification
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Slack Notification
-  #       uses: rtCamp/action-slack-notify@v2
-  #       env:
-  #         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-
-  deploy:
-    needs: build
-    name: Dev deployment process
-    runs-on: ubuntu-latest
-    steps:
-      - name: Echo
+      - name: Dev deployment process
+        if: ${{ success() }}
         run: echo "This step will always run"

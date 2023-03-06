@@ -16,7 +16,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
-      - run: git checkout dev
       - run: npm i -g npm@8.5.0
       - run: node -v
       - run: npm -v
